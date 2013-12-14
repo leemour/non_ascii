@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    non_ascii (0.1.0)
+      colorize (~> 0.6)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    colorize (0.6.0)
+    rake (10.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  non_ascii!
+  rake

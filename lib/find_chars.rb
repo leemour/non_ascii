@@ -1,5 +1,5 @@
 require 'colorize'
-require_relative 'options'
+require_relative 'options/options'
 
 module NonAscii
   class FindChars
@@ -15,11 +15,11 @@ module NonAscii
       format lines
     end
 
-    private
+    # private
 
     def extract(options)
       defaults = { placeholder: '�' }
-      options.merge defaults
+      options.merge! defaults
     end
 
     def ascii(char)
@@ -59,7 +59,7 @@ module NonAscii
     end
 
     def placeholder
-      @options[:placeholder].yellow
+      @options[:nocolor] ? @options[:placeholder] : @options[:placeholder].yellow
     end
   end
 end
