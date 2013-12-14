@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'forwardable'
+require_relative '../lib/find_chars'
+
+module NonAscii
+  class << self
+    def process
+      options = OptionParser.parse
+      process_files(options) { |file, data| puts file.dup.red, data }
+    end
+
+    private
+
+    def process_files(options)
+      while file = ARGV.pop do
+        data = FindChars.new file, options
+        yield [ file, data.find_non_ascii ]
+      end
+    end
+  end
+end
+
+
+NonAscii.process
