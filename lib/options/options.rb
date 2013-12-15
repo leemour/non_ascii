@@ -1,7 +1,7 @@
 require 'forwardable'
 
 module NonAscii
-  class OptionParser
+  class OptionsParser
     class << self
       def parse(arguments)
         options = Options.new

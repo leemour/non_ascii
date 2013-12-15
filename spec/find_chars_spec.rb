@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe NonAscii::FindChars do
+describe FindChars do
   before do
-    @finder = NonAscii::FindChars.new 'spec/non_ascii.txt'
+    @finder = FindChars.new 'spec/non_ascii.txt'
     @options = { nocolor: true }
   end
 
@@ -31,7 +31,7 @@ describe NonAscii::FindChars do
     end
     describe "without non-ascii characters" do
       it "must return empty string" do
-        finder = NonAscii::FindChars.new 'spec/ascii_only.txt', @options
+        finder = FindChars.new 'spec/ascii_only.txt', @options
         finder.find_non_ascii.must_equal ""
       end
     end
@@ -39,7 +39,7 @@ describe NonAscii::FindChars do
       it "must return string with no color" do
         response = "0:China, �ity: Beijing,\n" +
                    "5:Mr: Ji�n Cheng Sun,\n"
-        finder = NonAscii::FindChars.new 'spec/non_ascii.txt', @options
+        finder = FindChars.new 'spec/non_ascii.txt', @options
         finder.find_non_ascii.must_equal response
       end
     end
