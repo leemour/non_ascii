@@ -21,3 +21,6 @@ non_ascii test.txt
 Details
 -------
 Requires `colorize` gem installed
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/leemour/non_ascii/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
